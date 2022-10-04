@@ -63,22 +63,28 @@ public class MainActivity extends AppCompatActivity {
                     won.setText(df.format(number*1400));
                     yen.setText(df.format(number*144.74));
                     rupi.setText(df.format(number*81.64));
+                    if (input.contains("-")){
+                        dollar.setText("0");
+                    }
+                    if(input.startsWith("0")){
+                        input.replace("0", number+"");
+                    }
 
                 } catch(NumberFormatException e) {
                     if (input.equals(".")){
                         dollar.setText("0.");
-                        editText.setSelection(editText.getText().length());
-                    } else if (input.contains("-")){
+                    }
+                    if (input.contains("-")){
                         dollar.setText("0");
-                        editText.setSelection(editText.getText().length());
-                    }else if (input.equals("")){
+
+                    }if (input.equals("")){
                         euro.setText("European Euro");
                         won.setText("Korean Won");
                         yen.setText("Japanese Yen");
                         rupi.setText("Indian Rupi");
                     }
 
-
+                    editText.setSelection(editText.getText().length());
 
 
 
