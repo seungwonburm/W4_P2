@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 } catch(NumberFormatException e) {
                     if (input.equals(".")){
                         dollar.setText("0.");
-                    } else if (input.equals("-")){
+                    } else if (input.contains("-")){
                         dollar.setText("0");
                     }else if (input.equals("")){
                         dollar.setText("0");
