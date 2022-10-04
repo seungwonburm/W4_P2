@@ -67,12 +67,21 @@ public class MainActivity extends AppCompatActivity {
                 } catch(NumberFormatException e) {
                     if (input.equals(".")){
                         dollar.setText("0.");
+                        editText.setSelection(editText.getText().length());
                     } else if (input.contains("-")){
                         dollar.setText("0");
+                        editText.setSelection(editText.getText().length());
                     }else if (input.equals("")){
-                        dollar.setText("0");
+                        euro.setText("European Euro");
+                        won.setText("Korean Won");
+                        yen.setText("Japanese Yen");
+                        rupi.setText("Indian Rupi");
                     }
-                    editText.setSelection(editText.getText().length());
+
+
+
+
+
 
 
                 } catch(NullPointerException e) {
